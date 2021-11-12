@@ -22,8 +22,7 @@ export default class Login extends Component {
     });
   }
 
-  handleClick = async (event) => {
-    event.preventDefault();
+  handleClick = async () => {
     const { user } = this.state;
     this.setState(({ loading: true }));
     await createUser({ name: user });
