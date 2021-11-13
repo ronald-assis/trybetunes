@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
+import Loading from './Loading';
+import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import AlbumList from '../components/AlbumList';
 
 export default class Search extends Component {
   constructor() {
@@ -7,6 +10,10 @@ export default class Search extends Component {
     this.state = {
       artist: '',
       disabled: true,
+      loading: false,
+      albumList: [],
+      notFound: false,
+      titleArtist: '',
     };
   }
 
@@ -18,11 +25,24 @@ export default class Search extends Component {
     });
   }
 
+  handleChangeButton = async () => {
+    const { artist } = this.state;
+    this.setState({ titleArtist: artist, artist: '', disabled: true, loading: true });
+    const albums = await searchAlbumsAPI(artist);
+    this.setState({
+      albumList: albums.filter((album) => album.artistName),
+      loading: false,
+      notFound: true,
+    });
+  }
+
   render() {
     const {
       handleChangeInput,
-      state: { artist, disabled },
+      handleChangeButton,
+      state: { artist, disabled, loading, albumList, notFound, titleArtist },
     } = this;
+
     return (
       <div data-testid="page-search">
         <Header />
@@ -39,11 +59,19 @@ export default class Search extends Component {
             type="submit"
             className="search-artist-button"
             disabled={ disabled }
+            onClick={ handleChangeButton }
             data-testid="search-artist-button"
           >
             Pesquisar
           </button>
         </form>
+
+        { loading && <Loading /> }
+
+        { notFound && <AlbumList
+          albumList={ albumList }
+          titleArtist={ titleArtist }
+        /> }
       </div>
     );
   }
