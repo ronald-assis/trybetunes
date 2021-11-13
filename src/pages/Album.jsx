@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import Loading from './Loading';
-import MusicCard from '../components/MusicCArd';
+import MusicCard from '../components/MusicCard';
 
 export default class Album extends Component {
   constructor() {
