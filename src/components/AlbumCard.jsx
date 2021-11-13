@@ -32,9 +32,10 @@ export default class AlbumCard extends Component {
 }
 
 AlbumCard.propTypes = {
-  album: PropTypes.objectOf(PropTypes.object).isRequired,
-  artistName: PropTypes.string.isRequired,
-  collectionId: PropTypes.number.isRequired,
-  collectionName: PropTypes.string.isRequired,
-  artworkUrl100: PropTypes.string.isRequired,
+  album: PropTypes.shape({
+    artistName: PropTypes.string.isRequired,
+    collectionId: PropTypes.number.isRequired,
+    collectionName: PropTypes.string.isRequired,
+    artworkUrl100: PropTypes.string.isRequired,
+  }).isRequired,
 };
