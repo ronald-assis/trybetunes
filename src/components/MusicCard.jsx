@@ -19,7 +19,7 @@ export default class MusicCard extends Component {
 
   handleChangeChecked = async ({ target: { name, checked } }) => {
     this.setState({ [name]: checked });
-    const { music } = this.props;
+    const { music, removeFavoriteMusic } = this.props;
     const { checkFavorite } = this.state;
 
     if (!checkFavorite) {
@@ -30,6 +30,7 @@ export default class MusicCard extends Component {
       this.setState({ loading: true });
       await removeSong(music);
       this.setState({ loading: false, checkFavorite: false });
+      removeFavoriteMusic();
     }
   }
 
@@ -44,15 +45,22 @@ export default class MusicCard extends Component {
     const {
       handleChangeChecked,
       props: {
-        music: { previewUrl, trackName, trackId },
+        music: {
+          previewUrl, trackName, trackId, artworkUrl100, collectionName },
       },
       state: {
         checkFavorite, loading },
     } = this;
+    const { music } = this.props;
+    console.log(music);
     return (
       loading ? <Loading />
         : (
           <div className="music">
+            <img
+              src={ artworkUrl100 }
+              alt={ `Capa do álbum ${collectionName} de ${trackName}` }
+            />
             <p>{trackName}</p>
             <audio data-testid="audio-component" src={ previewUrl } controls>
               <track kind="captions" />
@@ -81,5 +89,8 @@ MusicCard.propTypes = {
     previewUrl: PropTypes.string.isRequired,
     trackName: PropTypes.string.isRequired,
     trackId: PropTypes.number.isRequired,
+    artworkUrl100: PropTypes.string.isRequired,
+    collectionName: PropTypes.string.isRequired,
   }).isRequired,
+  removeFavoriteMusic: PropTypes.func.isRequired,
 };
