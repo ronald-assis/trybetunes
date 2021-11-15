@@ -51,8 +51,6 @@ export default class MusicCard extends Component {
       state: {
         checkFavorite, loading },
     } = this;
-    const { music } = this.props;
-    console.log(music);
     return (
       loading ? <Loading />
         : (
