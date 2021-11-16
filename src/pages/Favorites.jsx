@@ -24,19 +24,17 @@ export default class Favorites extends Component {
     this.setState({ favoriteMusics: musics, loading: false });
   }
 
-  removeFavoriteMusic = () => {
+  refreshFavoriteMusic = () => {
     this.setState({ loading: true });
     this.getFavoriteMusics();
   }
 
   render() {
     const {
-      removeFavoriteMusic,
+      refreshFavoriteMusic,
       state: { loading, favoriteMusics },
     } = this;
 
-    console.log(getFavoriteSongs());
-    console.log(favoriteMusics);
     return (
       <div data-testid="page-favorites">
         <Header />
@@ -51,12 +49,7 @@ export default class Favorites extends Component {
                       <li key={ music.trackId }>
                         <MusicCard
                           music={ music }
-                          trackName={ music.trackName }
-                          trackId={ music.trackId }
-                          artworkUrl100={ music.artworkUrl100 }
-                          previewUrl={ music.previewUrl }
-                          collectionName={ music.collectionName }
-                          removeFavoriteMusic={ removeFavoriteMusic }
+                          refreshFavoriteMusic={ refreshFavoriteMusic }
                         />
 
                       </li>
