@@ -3,7 +3,7 @@ import { getUser } from '../services/userAPI';
 import Loading from '../pages/Loading';
 import Logo from './images/logo.svg';
 import Navigation from './Navigation';
-import './styles/Header.css';
+import '../styles/Header.css';
 
 export default class Header extends Component {
   constructor() {

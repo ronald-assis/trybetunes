@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
 import { createUser } from '../services/userAPI';
+import Logo from '../components/images/LOGO_POSITIVA .svg';
 import Loading from './Loading';
+import '../styles/Login.css';
 
 export default class Login extends Component {
   constructor() {
@@ -43,27 +45,34 @@ export default class Login extends Component {
     } = this;
 
     return (
-      <div data-testid="page-login">
-        <form>
-          <input
-            type="text"
-            name="user"
-            value={ user }
-            onChange={ handleInput }
-            className="user-name-input"
-            data-testid="login-name-input"
-          />
-          <button
-            type="submit"
-            className="button-redirect"
-            disabled={ disabled }
-            onClick={ handleClick }
-            data-testid="login-submit-button"
-          >
-            Entrar
-          </button>
-        </form>
-        {loading && <Loading />}
+      <div className="page-login" data-testid="page-login">
+        {loading ? <Loading /> : (
+          <div className="form-and-image">
+            <img src={ Logo } alt="Logo Trybe Tunes" />
+            <form>
+              <div className="button-input">
+                <input
+                  type="text"
+                  name="user"
+                  value={ user }
+                  onChange={ handleInput }
+                  className="user-name-input"
+                  placeholder="Nome do usúario"
+                  data-testid="login-name-input"
+                />
+                <button
+                  type="submit"
+                  className="button-redirect"
+                  disabled={ disabled }
+                  onClick={ handleClick }
+                  data-testid="login-submit-button"
+                >
+                  Entrar
+                </button>
+              </div>
+            </form>
+          </div>
+        )}
         {redirect && <Redirect to="/search" />}
       </div>
     );
