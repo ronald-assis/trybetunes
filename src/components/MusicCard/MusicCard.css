@@ -1,0 +1,14 @@
+.music {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 728px;
+  border-top: 1px solid #E1E5EB;
+  border-bottom: 1px solid #E1E5EB;
+  padding: 23px 50px;
+  margin-left: 79px;
+}
+
+.music p {
+  width: 200px;
+}
