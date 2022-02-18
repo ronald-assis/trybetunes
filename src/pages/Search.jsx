@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { GoSearch } from 'react-icons/go';
 import Header from '../components/Header';
 import Loading from './Loading';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import AlbumList from '../components/AlbumList';
+import '../styles/Search.css';
 
 export default class Search extends Component {
   constructor() {
@@ -46,15 +48,20 @@ export default class Search extends Component {
     return (
       <div data-testid="page-search">
         <Header />
-        <form>
-          <input
-            type="text"
-            name="artist"
-            className="search-artist-input"
-            value={ artist }
-            onChange={ handleChangeInput }
-            data-testid="search-artist-input"
-          />
+        <form className="search-input">
+          <div className="input-and-icon">
+            <input
+              type="text"
+              name="artist"
+              className="search-artist-input"
+              value={ artist }
+              onChange={ handleChangeInput }
+              placeholder="Nome do Artista ou Banda"
+              data-testid="search-artist-input"
+            />
+            <GoSearch />
+
+          </div>
           <button
             type="submit"
             className="search-artist-button"
