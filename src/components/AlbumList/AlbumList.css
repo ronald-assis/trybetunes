@@ -6,10 +6,21 @@
   margin: 112px auto;
 }
 
-.title-artist {
+.album-List .title-artist {
   font-weight: 300;
   font-size: 24px;
   line-height: 25px;
   color: #001813;
   margin-bottom: 40px;
 }
+ .album-List ol {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+ }
+
+ .album-List ol li {
+   flex: 1 0 20%;
+ }
