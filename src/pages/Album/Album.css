@@ -1,0 +1,29 @@
+.content-album {
+  display: flex;
+  width: 80%;
+  margin: 139px auto;
+}
+
+.content-album .info-album img {
+  width: 290px;
+  height: 290px;
+  border-radius: 6px;
+  margin-bottom: 45px;
+}
+
+.content-album .info-album .album-artist-name h4 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 37px;
+  margin-bottom: 11;
+  color: #023031;
+}
+
+.content-album .info-album .album-artist-name p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 25px;
+  color: #023031;
+}

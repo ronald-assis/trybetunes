@@ -46,7 +46,7 @@ export default class MusicCard extends Component {
       handleChangeChecked,
       props: {
         music: {
-          previewUrl, trackName, trackId, artworkUrl100, collectionName },
+          previewUrl, trackName, trackId },
       },
       state: {
         checkFavorite, loading },
@@ -55,10 +55,6 @@ export default class MusicCard extends Component {
       loading ? <Loading />
         : (
           <div className="music">
-            <img
-              src={ artworkUrl100 }
-              alt={ `Capa do álbum ${collectionName} de ${trackName}` }
-            />
             <p>{trackName}</p>
             <audio data-testid="audio-component" src={ previewUrl } controls>
               <track kind="captions" />
@@ -87,8 +83,6 @@ MusicCard.propTypes = {
     previewUrl: PropTypes.string.isRequired,
     trackName: PropTypes.string.isRequired,
     trackId: PropTypes.number.isRequired,
-    artworkUrl100: PropTypes.string.isRequired,
-    collectionName: PropTypes.string.isRequired,
   }).isRequired,
   refreshFavoriteMusic: PropTypes.func.isRequired,
 };

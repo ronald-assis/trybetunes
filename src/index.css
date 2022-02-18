@@ -17,6 +17,14 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+}
+
+ol {
+  list-style-type: none;
+}
+
 .loading {
   align-items: center;
   display: flex;

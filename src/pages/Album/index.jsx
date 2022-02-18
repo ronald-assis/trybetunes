@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Header from '../components/Header';
-import getMusics from '../services/musicsAPI';
-import Loading from './Loading';
-import MusicCard from '../components/MusicCard';
+import Header from '../../components/Header';
+import getMusics from '../../services/musicsAPI';
+import Loading from '../Loading';
+import MusicCard from '../../components/MusicCard';
+import './Album.css';
 
 export default class Album extends Component {
   constructor() {
@@ -53,15 +54,15 @@ export default class Album extends Component {
               <p data-testid="artist-name">{ artist }</p>
             </div>
           </div>
-          <div className="list-music-album">
-            <ol>
-              { musics.map((music) => (
-                <li key={ music.trackId }>
-                  <MusicCard music={ music } />
-                </li>
-              )) }
-            </ol>
-          </div>
+
+          <ol className="list-music-album">
+            { musics.map((music) => (
+              <li key={ music.trackId }>
+                <MusicCard music={ music } />
+              </li>
+            )) }
+          </ol>
+
         </div>
       </div>
     );
