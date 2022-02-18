@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Header from '../components/Header';
-import Loading from './Loading';
-import MusicCard from '../components/MusicCard';
-import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+import Header from '../../components/Header';
+import Loading from '../Loading';
+import MusicCard from '../../components/MusicCard';
+import { getFavoriteSongs } from '../../services/favoriteSongsAPI';
+import './Favorites.css';
 
 export default class Favorites extends Component {
   constructor() {
@@ -41,7 +42,7 @@ export default class Favorites extends Component {
         { loading ? <Loading />
           : (
             <div className="content-favorite-musics">
-              <p>Músicas Favoritas:</p>
+              <p className="favorite-music">Músicas Favoritas:</p>
               <div className="list-favorites-musics">
                 <ol>
                   {
@@ -50,6 +51,9 @@ export default class Favorites extends Component {
                         <MusicCard
                           music={ music }
                           refreshFavoriteMusic={ refreshFavoriteMusic }
+                          img={ music.artworkUrl60 }
+                          albumName={ music.collectionName }
+                          artist={ music.artistName }
                         />
 
                       </li>

@@ -58,7 +58,12 @@ export default class Album extends Component {
           <ol className="list-music-album">
             { musics.map((music) => (
               <li key={ music.trackId }>
-                <MusicCard music={ music } />
+                <MusicCard
+                  music={ music }
+                  img={ url }
+                  albumName={ albumName }
+                  artist={ artist }
+                />
               </li>
             )) }
           </ol>

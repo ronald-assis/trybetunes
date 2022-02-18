@@ -46,6 +46,9 @@ export default class MusicCard extends Component {
     const {
       handleChangeChecked,
       props: {
+        img,
+        albumName,
+        artist,
         music: {
           previewUrl, trackName, trackId },
       },
@@ -56,6 +59,10 @@ export default class MusicCard extends Component {
       loading ? <Loading />
         : (
           <div className="music">
+            <img
+              src={ img }
+              alt={ `Capa do álbum ${albumName} de ${artist}` }
+            />
             <p>{trackName}</p>
             <audio data-testid="audio-component" src={ previewUrl } controls>
               <track kind="captions" />
@@ -80,6 +87,9 @@ export default class MusicCard extends Component {
 }
 
 MusicCard.propTypes = {
+  img: PropTypes.string.isRequired,
+  albumName: PropTypes.string.isRequired,
+  artist: PropTypes.string.isRequired,
   music: PropTypes.shape({
     previewUrl: PropTypes.string.isRequired,
     trackName: PropTypes.string.isRequired,

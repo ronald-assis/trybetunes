@@ -1,0 +1,13 @@
+.content-favorite-musics {
+  width: 80%;
+  margin: 113px auto;
+}
+
+.content-favorite-musics .favorite-music {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 25px;
+  margin-bottom: 44px;
+  color: #001813;
+}
