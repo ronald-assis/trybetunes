@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import AlbumCard from './AlbumCard';
+import AlbumCard from '../AlbumCard';
+import './AlbumList.css';
 
 export default class AlbumList extends Component {
   render() {
@@ -12,7 +13,9 @@ export default class AlbumList extends Component {
       renderAlbumList
         ? (
           <div className="album-List">
-            <span>{`Resultado de álbuns de: ${titleArtist}`}</span>
+            <span className="title-artist">
+              {`Resultado de álbuns de ${titleArtist}:`}
+            </span>
             <ol>
               { albumList.map((album) => (
                 <li key={ album.collectionId }>
