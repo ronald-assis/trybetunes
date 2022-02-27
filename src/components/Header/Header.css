@@ -11,18 +11,27 @@ header .logo-and-user-name {
   display: flex;
   height: 100px;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 49.3px 0 35px;
 }
 
 header .logo-and-user-name .user {
   background-color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  height: 41.64px;
+  width: 198.7px;
   border-radius: 50px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  font-size: 32px;
-  height: 41.64px;
-  text-align: center;
-  width: 198.7px;
 }
+
+header .user img {
+  width: 36.44px;
+  height: 36.44px;
+  clip-path: circle(50% at 50% 50%);
+  margin: auto 36.44px auto 4.34px;
+} 
 
 header nav {
   align-items: center;

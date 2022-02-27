@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { getUser } from '../services/userAPI';
-import Loading from '../pages/Loading';
-import Logo from './images/logo.svg';
-import Navigation from './Navigation';
-import '../styles/Header.css';
+import { getUser } from '../../services/userAPI';
+import Loading from '../../pages/Loading';
+import Logo from '../images/logo.svg';
+import Navigation from '../Navigation';
+import ProfileImag from '../images/profile.svg';
+
+import './Header.css';
 
 export default class Header extends Component {
   constructor() {
@@ -11,6 +13,7 @@ export default class Header extends Component {
     this.state = {
       user: '',
       loading: false,
+      image: '',
     };
   }
 
@@ -20,8 +23,16 @@ export default class Header extends Component {
 
   getUserSave = async () => {
     this.setState({ loading: true });
-    const { name } = await getUser();
-    this.setState({ user: name, loading: false });
+    const { name, image } = await getUser();
+
+    this.setState({ user: name, loading: false, image });
+  }
+
+  validateImage = () => {
+    const { image } = this.state;
+    console.log(image);
+    const VA = image === '' ? ProfileImag : image;
+    return VA;
   }
 
   render() {
@@ -33,6 +44,7 @@ export default class Header extends Component {
           {loading ? <Loading />
             : (
               <div className="user">
+                <img src={ this.validateImage() } alt="profile img" />
                 <span data-testid="header-user-name">{ user }</span>
               </div>
             )}
