@@ -20,6 +20,7 @@
 .content-profile .image-and-link-edit-profile img {
   width: 80px;
   height: 80px;
+  clip-path: circle(50% at 50% 50%);
 }
 
 .content-profile .image-and-link-edit-profile a {
