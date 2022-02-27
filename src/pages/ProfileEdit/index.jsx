@@ -96,7 +96,7 @@ export default class ProfileEdit extends Component {
                   className="edit-input-image"
                   value={ image }
                   onChange={ handleChangeInput }
-                  placeholder="insira um link"
+                  placeholder="Insira um link"
                   data-testid="edit-input-image"
                 />
               </div>
