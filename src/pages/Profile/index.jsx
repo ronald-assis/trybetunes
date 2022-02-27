@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import { getUser } from '../services/userAPI';
-import ProfileImag from '../components/images/profile.svg';
-import Loading from './Loading';
+import Header from '../../components/Header';
+import { getUser } from '../../services/userAPI';
+import ProfileImag from '../../components/images/profile.svg';
+import Loading from '../Loading';
+import './Profile.css';
 
 export default class Profile extends Component {
   constructor() {

@@ -1,0 +1,7 @@
+.content-profile {
+  width: 30%;
+  margin: 104px auto;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
