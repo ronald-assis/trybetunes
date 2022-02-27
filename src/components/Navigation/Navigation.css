@@ -1,0 +1,25 @@
+nav {
+  background-color: white;
+  align-items: center;
+  display: flex;
+  height: 78px;
+  justify-content: space-around;
+}
+
+nav a {
+  background-color: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  height: 100%;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+nav a:hover  {
+  background-color: #036B52;
+}
+
+nav a:focus  {
+  background-color: #036B52;
+}
