@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import Header from '../components/Header';
-import { getUser, updateUser } from '../services/userAPI';
-import ProfileImag from '../components/images/profile.svg';
-import Loading from './Loading';
+import Header from '../../components/Header';
+import { getUser, updateUser } from '../../services/userAPI';
+import ProfileImag from '../../components/images/profile.svg';
+import Loading from '../Loading';
+import './ProfileEdit.css';
 
 export default class ProfileEdit extends Component {
   constructor() {
@@ -86,7 +87,7 @@ export default class ProfileEdit extends Component {
         { loading ? <Loading />
           : (
 
-            <form>
+            <form className="profile-edit-form">
               <div className="new-image-profile">
                 <img src={ validateImage() } alt="Nova imagem de perfil" />
                 <input
