@@ -7,6 +7,25 @@
  #vqv 🚀
 
 ---
+## Para ter acesso ao repositório
+
+```bash
+    $ git clone git@github.com:ronald-assis/trybetunes.git
+    $ cd trybetunes
+```
+
+Para inicar segue os passos abaixo:
+
+```bash
+    # Instalar dependências
+    $ npm install
+    
+    # Execute o servidor de desenvolvimento
+    $ npm start
+ 
+```
+
+
 
 # Habilidades
 Neste projeto, contém:
